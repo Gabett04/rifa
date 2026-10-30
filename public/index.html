@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Súper Gran Rifa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 id="nombre-rifa">🎉 SÚPER GRAN RIFA 🎉</h1>
+            <p class="precio">Valor <strong id="precio-boleto">$2000</strong> por boleta</p>
+        </header>
+
+        <div id="banner-ganador" class="banner-ganador" style="display:none;">
+            <h2>🏆 ¡TENEMOS GANADOR! 🏆</h2>
+            <div class="numero-ganador" id="numero-ganador"></div>
+            <p id="info-ganador"></p>
+        </div>
+
+        <section class="info">
+            <div class="info-item">
+                <h3>🏆 Premio</h3>
+                <p id="premio-rifa">$100.000</p>
+            </div>
+            <div class="info-item">
+                <h3>📅 Fecha</h3>
+                <p id="fecha-rifa">15 de Octubre</p>
+            </div>
+            <div class="info-item">
+                <h3>🎲 Juega con</h3>
+                <p>Últimas 2 cifras<br><span id="loteria-rifa">Sinuano Noche</span></p>
+            </div>
+        </section>
+
+        <section class="pago">
+            <h3>💳 Nequi: <span id="nequi-config">3024130451</span></h3>
+            <p id="titular-config">Yoser Fuentes</p>
+        </section>
+
+        <section class="tabla-section">
+            <h2>Selecciona tus números</h2>
+            <div class="leyenda">
+                <span class="box disponible"></span> Disponible
+                <span class="box seleccionado"></span> Seleccionado
+                <span class="box vendido"></span> Vendido
+            </div>
+            <div class="grid" id="tabla"></div>
+        </section>
+
+        <section class="formulario" id="formulario-compra">
+            <h2>Tus datos</h2>
+            <p class="resumen">Números seleccionados: <strong id="lista-seleccionados">Ninguno</strong></p>
+            <p class="resumen">Total a pagar: <strong id="total">$0</strong></p>
+            
+            <input type="text" id="nombre" placeholder="Tu nombre completo" required>
+            <input type="tel" id="telefono" placeholder="Tu número de teléfono" required>
+            
+            <button onclick="enviarCompra()" id="btn-comprar">Reservar Boletas</button>
+        </section>
+
+        <section class="formulario" id="rifa-cerrada" style="display:none; text-align:center;">
+            <h2 style="color: #ef4444;">🚫 Rifa Cerrada</h2>
+            <p style="margin-top: 15px;">La venta de boletas ha finalizado. ¡Gracias por participar!</p>
+        </section>
+
+        <footer>
+            <p>Una vez reserves, envía el comprobante de pago al Nequi.</p>
+        </footer>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2 id="modal-titulo">¡Reserva Exitosa!</h2>
+            <p id="modal-mensaje"></p>
+            <button onclick="cerrarModal()">Aceptar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
